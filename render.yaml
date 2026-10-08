@@ -9,7 +9,7 @@ services:
     plan: free
     region: oregon
     rootDir: backend
-    buildCommand: pnpm run build
+    buildCommand: pnpm install --frozen-lockfile --prod=false && pnpm run build
     startCommand: node dist/index.js
     healthCheckPath: /api/health
     buildFilter:
@@ -36,7 +36,7 @@ services:
     name: shortit-web
     runtime: static
     rootDir: frontend
-    buildCommand: pnpm run build
+    buildCommand: pnpm install --frozen-lockfile --prod=false && pnpm run build
     staticPublishPath: dist
     buildFilter:
       paths:
