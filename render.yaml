@@ -35,7 +35,6 @@ services:
   - type: web
     name: shortit-web
     runtime: static
-    region: oregon
     rootDir: frontend
     buildCommand: pnpm run build
     staticPublishPath: dist
